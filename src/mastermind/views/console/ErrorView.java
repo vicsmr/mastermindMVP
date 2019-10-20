@@ -3,7 +3,6 @@ package mastermind.views.console;
 import mastermind.types.Error;
 import mastermind.views.ColorView;
 import mastermind.views.View;
-import santaTecla.utils.Console;
 
 public class ErrorView extends View {
 	
@@ -16,7 +15,7 @@ public class ErrorView extends View {
 	}
 	
 	public void writeln(Error error) {
-		new Console().writeln(ErrorView.MESSAGES[error.ordinal()]);
+		this.console.writeln(ErrorView.MESSAGES[error.ordinal()]);
 	}	
 
 }

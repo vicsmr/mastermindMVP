@@ -37,13 +37,13 @@ public class ProposalController extends Controller {
 		if (this.session.isWinner()) {
 			proposedCombinationView.writeln(MessageView.WINNER.getMessage());
 			this.session.next();
-		} else if (this.session.isLooser()) {
+		} else if (this.session.isLoser()) {
 			proposedCombinationView.writeln(MessageView.LOOSER.getMessage());
 			this.session.next();
 		}
 	}
 
-	public Error addProposedCombination(List<Color> colors) {
+	private Error addProposedCombination(List<Color> colors) {
 		Error error = null;
 		if (colors.size() != Combination.getWidth()) {
 			error = Error.WRONG_LENGTH;
